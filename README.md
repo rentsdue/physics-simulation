@@ -3,6 +3,8 @@
 ## Introduction
 This Python script, "simulation.py," is designed to create a basic physics simulation using the Pygame library. It simulates the behavior of falling objects under the influence of gravity and provides a foundation for more complex physics simulations.
 
+Currently this simulation needs a lot of work in progress, so contribute to the skeleton code established so far!
+
 ## Prerequisites
 Before running this script, ensure that you have the following prerequisites installed on your system:
 - Python (version 3 or higher): You can download Python from [python.org](https://www.python.org/downloads/).
