@@ -1,16 +1,18 @@
 import pygame
+
+# Set up the display
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Physics Simulation")
+
 class Ball:
     def __init__(self, x, y, radius):
         self.x = x
         self.y = y
         self.radius = radius
         self.velocity = 0
-        self.acceleration = -9.8  # You can adjust this value for gravity
+        self.acceleration = 0.1  # You can adjust this value for gravity
 
 ball = Ball(400, 50, 20)  # Create a ball object
-# Set up the display
-screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("Physics Simulation")
 
 running = True
 while running:
