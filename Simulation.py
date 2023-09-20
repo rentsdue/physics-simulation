@@ -9,25 +9,31 @@ class Ball:
         self.x = x
         self.y = y
         self.radius = radius
-        self.velocity = 0
+        self.velocity_x = 20  # Initial horizontal velocity (adjust as needed)
+        self.velocity_y = -100
         self.acceleration = 9.8  # You can adjust this value for gravity
 
     def update(self):
         # Update the object's position
-        self.velocity += self.acceleration
-        self.y += self.velocity
+        self.velocity_y += self.acceleration
+        self.y += self.velocity_y
+        self.x += self.velocity_x  # Added horizontal motion
 
         # Check if the ball hits the ground
         if self.y >= ground_y - self.radius:
             self.y = ground_y - self.radius  # Keep the ball above or on the ground
-            self.velocity = -self.velocity  # Reverse the velocity for rebound
+            self.velocity_y = -self.velocity_y
 
     def draw(self, screen):
         # Draw the object (ball in this case)
-        pygame.draw.circle(screen, (255, 255, 255), (self.x, int(self.y)), self.radius)
+        pygame.draw.circle(screen, (255, 255, 255), (int(self.x), int(self.y)), self.radius)
 
-ball = Ball(400, 50, 10)  # Create a ball object
+ball_radius = 10  # Radius of the ball
+ball_x = 0  # Initial x-position of the ball
 ground_y = 550  # Height of the ground
+
+# Create a ball object starting at the ground
+ball = Ball(ball_x, ground_y - ball_radius, ball_radius)
 
 # Create a ground surface
 ground_color = (0, 255, 0)  # Green color for the ground
@@ -65,6 +71,6 @@ while running:
     pygame.display.flip()
 
     # Control the frame rate
-    pygame.time.delay(100)
+    pygame.time.delay(300)
 
 pygame.quit()
