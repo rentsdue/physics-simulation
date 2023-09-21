@@ -9,8 +9,8 @@ class Ball:
         self.x = x
         self.y = y
         self.radius = radius
-        self.velocity_x = 20  # Initial horizontal velocity (adjust as needed)
-        self.velocity_y = -100
+        self.velocity_x = float(input("Horizontal component: "))
+        self.velocity_y = float(input("Vertical component(Note that down is positive, up is negative): "))
         self.acceleration = 9.8  # You can adjust this value for gravity
 
     def update(self):
@@ -22,7 +22,7 @@ class Ball:
         # Check if the ball hits the ground
         if self.y >= ground_y - self.radius:
             self.y = ground_y - self.radius  # Keep the ball above or on the ground
-            self.velocity_y = -self.velocity_y
+            self.velocity_y = 0
 
     def draw(self, screen):
         # Draw the object (ball in this case)
