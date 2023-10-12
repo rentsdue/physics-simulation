@@ -9,8 +9,8 @@ class Ball:
         self.x = x
         self.y = y
         self.radius = radius
-        self.velocity_x = float(input("Horizontal component: "))
-        self.velocity_y = float(input("Vertical component(Note that down is positive, up is negative): "))
+        self.velocity_x = 50
+        self.velocity_y = -50
         self.acceleration = 9.8  # You can adjust this value for gravity
 
     def update(self):

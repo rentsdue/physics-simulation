@@ -8,11 +8,15 @@ Currently this simulation needs a lot of work in progress, so contribute to the 
 ## Prerequisites
 Before running this script, ensure that you have the following prerequisites installed on your system:
 - Python (version 3 or higher): You can download Python from [python.org](https://www.python.org/downloads/).
-- Pygame: You can install Pygame using pip with the command `pip install pygame`.
+- Pygame: You can install Pygame using pip with the command `pip install pygame`. This can be done via the instructions below.
 
 ## Usage
 Follow these steps to run the simulation:
-1. Clone or download the "simulation.py" script and save it to a directory of your choice.
+1. Clone or download the "simulation.py" script and save it to a directory of your choice. To install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
 2. Open your terminal or command prompt and navigate to the directory where you saved "simulation.py."
 3. Run the script using the Python interpreter:
      ```
