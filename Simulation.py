@@ -1,39 +1,16 @@
 import pygame
+from ball import Ball
 
 # Set up the display
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Projectile Motion Simulation")
-
-class Ball:
-    def __init__(self, x, y, radius):
-        self.x = x
-        self.y = y
-        self.radius = radius
-        self.velocity_x = 50
-        self.velocity_y = -50
-        self.acceleration = 9.8  # You can adjust this value for gravity
-
-    def update(self):
-        # Update the object's position
-        self.velocity_y += self.acceleration
-        self.y += self.velocity_y
-        self.x += self.velocity_x  # Added horizontal motion
-
-        # Check if the ball hits the ground
-        if self.y >= ground_y - self.radius:
-            self.y = ground_y - self.radius  # Keep the ball above or on the ground
-            self.velocity_y = 0
-
-    def draw(self, screen):
-        # Draw the object (ball in this case)
-        pygame.draw.circle(screen, (255, 255, 255), (int(self.x), int(self.y)), self.radius)
 
 ball_radius = 10  # Radius of the ball
 ball_x = 0  # Initial x-position of the ball
 ground_y = 550  # Height of the ground
 
 # Create a ball object starting at the ground
-ball = Ball(ball_x, ground_y - ball_radius, ball_radius)
+ball = Ball(ball_x, ground_y - ball_radius, ball_radius, ground_y)
 
 # Create a ground surface
 ground_color = (0, 255, 0)  # Green color for the ground
